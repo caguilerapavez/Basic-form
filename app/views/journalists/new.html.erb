@@ -1,0 +1,30 @@
+
+<h1 class="text-center my-5">Crear Periodista</h1>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <div class="card col-6">
+        <%= form_with model: @journalist, method: :journalist do |journalist| %>
+            <div class="border p-5 shadow">
+                <div class="mb-3">
+                    <%= journalist.label :name, "Nombre Periodista:", class:"form-label" %>
+                    <%= journalist.text_field :name, class:"form-control" %>
+                </div>
+                <div class="mb-3">
+                    <%= journalist.label :lastname, "Apellido Periodista:", class:"form-label" %>
+                    <%= journalist.text_field :lastname, class:"form-control" %>
+                </div>
+                <div class="mb-5">
+                    <%= journalist.label :specialty, "Especialidad Periodista:", class:"form-label" %>
+                    <%= journalist.text_area :specialty, class:"form-control" %>
+                </div>
+                <div>
+                    <%= journalist.submit "Crear", class:"btn btn-dark" %>
+                </div>
+            </div>
+        <%  end %>
+    </div>
+</div>
+<div class="text-center my-5">
+    <%= link_to "Listado Periodistas", journalists_index_path, class:"btn btn-dark" %>
+</div>

@@ -1,0 +1,28 @@
+
+<h1 class="text-center my-5">Crear Post</h1>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <div class="card col-6">
+        <%= form_with model: @post, method: :post do |form| %>
+            <div class="border p-5 shadow">
+                <div class="mb-3">
+                    <%= form.label :title, "Titulo del post:", class:"form-label" %>
+                    <%= form.text_field :title, class:"form-control" %>
+                </div>
+                
+
+                <div class="mb-5">
+                    <%= form.label :content, "Contenido:", class:"form-label" %>
+                    <%= form.text_area :content, class:"form-control" %>
+                </div>
+                <div>
+                    <%= form.submit "Enviar", class:"btn btn-dark" %>
+                </div>
+            </div>
+        <%  end %>
+    </div>
+</div>
+<div class="text-center my-5">
+    <%= link_to "Listado Post", posts_index_path, class:"btn btn-dark" %>
+</div>
